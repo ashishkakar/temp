@@ -1,7 +1,7 @@
-//set no exec for includes
-//route all through indes
-//enable strict
 //enable dev env
 //create error class
 //create router
 //create init to load requirements
+//replace with generic separator
+//read book
+//throw 404 error
