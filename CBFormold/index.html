@@ -12,7 +12,7 @@
 		<title>Cue Blocks Form</title>
 	</head>
 	<body onload="go();">
-		<!-- salt, login retries, check xhtml, collect ip address of form and admin, last login attempt, logged in, indent, search function, filter fieldnames before sql insert, log client errors on server, optimize table with indexes, try thrice before throwing error, handle all errors, put db unique constraints, fix initial nav glitch, use 1/0 status, fix routes to controller method format, implement one skill per category in php -->
+		<!-- salt, login retries, check xhtml, collect ip address of form and admin, last login attempt, logged in, indent, search function, use bigint for phone, change to phone_country, remove legend, filter fieldnames before sql insert, log client errors on server, make a message head for errors -->
 		<main>
 			<header>
 				<noscript>
@@ -25,7 +25,7 @@
 			</header>
 			<nav>
 				<ul>
-					<li id="homenav"><a href="javascript:navigate(pages.home);">Home</a></li>
+					<li id="homenav" class="active"><a href="javascript:navigate(pages.home);">Home</a></li>
 					<li id="adminnav"><a href="javascript:navigate(pages.admin);">Admin</a></li>
 				</ul>
 			</nav>
@@ -73,7 +73,13 @@
 			</table>
 			</fieldset>
 			<fieldset><legend>Skills</legend>
-			<table id="skillstbl" class="form"></table>
+			<table class="form">
+				<tr>
+					<td><label for="skills1">Scripting Languages</label></td>
+					<td><select id="skills1" name="skills1"><option value="0"></option><option value="1">PHP</option></select>
+					<td><input type="number" id="scores1" name="scores1" min="1" max="5"></td>
+				</tr>
+			</table>
 			</fieldset>
 			<table class="form">
 				<tr>
@@ -84,7 +90,7 @@
 		</div>
 		<div id="loginpage">
 		<h1>Admin Login</h1>
-		<form onsubmit="login_submit(this);">
+		<form onsubmit="login_submit();">
 			<table class="form">
 				<tr>
 					<td><label for="login_name">Login Name</label></td>
@@ -101,10 +107,6 @@
 				</tr>
 			</table>
 		</form>
-		</div>
-		<div id="adminpage">
-		<h1>Cue Blocks Form Records</h1>
-		<table></table>
 		</div>
 		<footer></footer>
 		</main>
